@@ -1,0 +1,13 @@
+- Initialize Vite-style React + TypeScript + Tailwind app shell manually after automated scaffolding was not persisted.
+- Configure Tailwind with monospaced editorial font (IBM Plex Mono), basic animation keyframes, and PostCSS pipeline.
+- Create minimal `App` shell and entrypoint in `main.tsx` to prepare for weather dashboard implementation per plan.
+- Implement typed Open-Meteo and Zippopotam API utilities plus weather mood inference helper.
+- Add persistent localStorage-backed weather state hook and geolocation-based weather hook with graceful error handling.
+- Build accessible WeatherCard, SearchBar, ErrorBanner, and Skeleton components with Tailwind styling and subtle animations.
+- Wire `App` to combine saved state, geolocation, and ZIP search; infer mood-based theming; and animate transitions and background refresh messaging.
+- Fix infinite background refresh loop by guarding background update to run only once per saved state and adding a shared fetch timeout wrapper for all external API calls.
+- Simplify persistent meta typing to avoid TypeScript incompatibilities and ensure background refresh only runs when valid coordinates or ZIP data are present.
+- Refactor text and card colors to rely on mood-based classes instead of hard-coded slate colors so content remains legible across light/dark themes.
+- Replace Lucide weather icons with animated SVGs from `@bybas/weather-icons`, piping mood-based accent colors through the WeatherCard.
+- Fix TypeScript build error in `App.tsx` by tightening the background refresh guard and using a non-null local reference for `persistentState.data`.
+- Add an ESLint v9 flat config (`eslint.config.mjs`) for React + TypeScript, update the lint script, and ensure `npm run lint` passes alongside a clean `npm run build`.
