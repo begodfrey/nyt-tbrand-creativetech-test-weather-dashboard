@@ -1,4 +1,4 @@
-# Weather Mood Dashboard
+# Weather Dashboard
 
 A small React + TypeScript + Vite app that shows current weather conditions using Open-Meteo, with optional ZIP search via Zippopotam.us. The app infers a color theme from the weather and time of day to drive animated SVG icons and theme colors, and it caches the last successful result in local storage, refreshing it once on load.
 
